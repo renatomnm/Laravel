@@ -1,0 +1,41 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/meuPrimeiroCaminho', function () {
+    return "eu criei o meu primeiro caminho em Laravel";
+});
+
+Route::get('/resultado/{numero}/{numero2?}', function ($numero,$numero2=1) {
+    $multi = $numero * $numero2;
+    if($numero2 === 1){
+      if($numero % 2 === 0){
+        return "par";
+      } else {
+        return "impar";
+      }
+    } else {
+      return $multi;
+    }
+});
+
+Route::get('/pagina1', function(){
+  return view('pagina1');
+});
+
+Route::get('/pagina2',function(){
+  return view('pagina2');
+});
