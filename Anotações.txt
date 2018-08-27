@@ -1,0 +1,11 @@
+Rotas -> Controller -> View
+
+Model -> Banco de dados
+View -> .blade.php
+Controller -> 
+
+Composer
+--- /// ---
+Composer create -project laravel/laravel
+composer install
+php artisan serve

@@ -32,6 +32,8 @@ Route::get('/resultado/{numero}/{numero2?}', function ($numero,$numero2=1) {
     }
 });
 
+
+
 Route::get('/pagina1', function(){
   return view('pagina1');
 });
