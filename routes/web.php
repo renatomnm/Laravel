@@ -30,8 +30,6 @@ Route::get('/resultado/{numero}/{numero2?}', function ($numero,$numero2=1) {
     }
 });
 
-
-
 Route::get('/pagina1', function(){
   return view('pagina1');
 });
@@ -43,3 +41,5 @@ Route::get('/pagina2',function(){
 Route::get('/pagina3',function(){
   return redirect('/');
 });
+
+Route::get('/filmes/{id}','FilmesController@procurarFilmeId')
