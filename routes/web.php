@@ -42,4 +42,4 @@ Route::get('/pagina3',function(){
   return redirect('/');
 });
 
-Route::get('/filmes/{id}','FilmesController@procurarFilmeId')
+Route::get('/filmes/{id}','FilmesController@procurarFilmeId');
