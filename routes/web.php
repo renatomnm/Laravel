@@ -43,3 +43,4 @@ Route::get('/pagina3',function(){
 });
 
 Route::get('/filmes/{id}','FilmesController@procurarFilmeId');
+Route::get('/filmes/procurar/{nome}','FilmesController@procurarFilmeNome');
