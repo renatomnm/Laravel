@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'welcomeController@index');
 
 Route::get('/meuPrimeiroCaminho', function () {
     return "eu criei o meu primeiro caminho em Laravel";
