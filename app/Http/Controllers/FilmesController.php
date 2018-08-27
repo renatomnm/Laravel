@@ -20,12 +20,10 @@ class FilmesController extends Controller
     function procurarFilmeNome($nome){
       $filmes = ["Toy Story","Procurando Nemo","Avatar","Star Wars: Episódio V","Up","Mary e Max"];
       $resultado = "O filme " . $nome . " não existe";
-      $id = 0;
       foreach($filmes as $f) {
         if($f == $nome){
-          $resultado = $id;
+          $resultado = $nome . " existe";
         }
-        $id++;
       }
       return $resultado;
     }
