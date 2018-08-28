@@ -14,3 +14,5 @@ Aula 02 --
 -> Criação do controller: fica no app/Http/Controller
 	php artisan make:controller <nome do controller>
 	
+---// ----
+Arquivo env -> arquivo que contem as informações do banco de dados
