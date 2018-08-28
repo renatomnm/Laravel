@@ -16,3 +16,11 @@ Aula 02 --
 	
 ---// ----
 Arquivo env -> arquivo que contem as informações do banco de dados
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+
+php artisan make:model <nomeModelo>
