@@ -27,4 +27,8 @@ class FilmesController extends Controller
       }
       return $resultado;
     }
+
+    function listaFilmes(){
+      return view('filmes');
+    }
 }
