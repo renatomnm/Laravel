@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Filme;
 
 class FilmesController extends Controller
 {
@@ -32,7 +33,7 @@ class FilmesController extends Controller
     }
 
     public function todososFilmes(){
-      $filmes = ["Titanic","avatar"];
+      $filmes = Filme::all();
       return view('todososFilmes')->with('filmes',$filmes);
     }
 }
