@@ -31,7 +31,8 @@ class FilmesController extends Controller
       return $resultado;
     }
 
-    function listaFilmes(){
-      return view('filmes');
+    public function todososFilmes(){
+      $filmes = ["Titanic","avatar"];
+      return view('todososFilmes')->with('filmes',$filmes);
     }
 }
