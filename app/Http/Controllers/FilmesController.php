@@ -32,7 +32,6 @@ class FilmesController extends Controller
     }
 
     function listaFilmes(){
-      $filmes = ["Toy Story","Procurando Nemo","Avatar","Star Wars: Episódio V","Up","Mary e Max"];
       return view('filmes');
     }
 }
