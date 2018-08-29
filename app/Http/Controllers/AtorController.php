@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ator;
 
 class AtorController extends Controller
 {
-  public function directory(){
-    return view('atores');
+  public function listaTudo(){
+    $atores = Ator::all();
+    return view('atores')->with('atores',$atores);
   }
 }
