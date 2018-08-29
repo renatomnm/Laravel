@@ -1,6 +1,6 @@
 <h1>Atores</h1>
 @forelse ($atores as $ator)
-<li> {{ $ator->getNomeCompleto() }} </li>
+<a href="ator\{{ $ator->id }}"> <br>{{ $ator->getNomeCompleto() }}</a>
 
 @empty
 <h1>Não existem filmes para exibir</h1>
