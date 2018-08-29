@@ -1,8 +1,7 @@
 Rotas -> Controller -> View
 
-Model -> Banco de dados
-View -> ".blade.php"
-Controller -> 
+View -> resources->view->".blade.php"
+Rotas -> routes->web.php
 
 Composer
 --- /// ---
@@ -13,6 +12,7 @@ php artisan serve
 Aula 02 --
 -> Criação do controller: fica no app/Http/Controller
 	php artisan make:controller <nome do controller>
+	
 	
 ---// ----
 Arquivo env -> arquivo que contem as informações do banco de dados
