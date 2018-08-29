@@ -46,3 +46,4 @@ Route::get('/filmes/{id}','FilmesController@procurarFilmeId');
 Route::get('/filmes/procurar/{nome}','FilmesController@procurarFilmeNome');
 
 Route::get('/filmes','FilmesController@todososFilmes');
+Route::get('/filmes/db/{id}','FilmesController@buscarFilme');

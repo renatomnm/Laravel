@@ -36,4 +36,9 @@ class FilmesController extends Controller
       $filmes = Filme::all();
       return view('todososFilmes')->with('filmes',$filmes);
     }
+
+    public function buscarFilme($id){
+      $filme = Filme::find($id);
+      return view('dadosdofilme')->with('filme',$filme);
+    }
 }
