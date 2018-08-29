@@ -11,4 +11,9 @@ class AtorController extends Controller
     $atores = Ator::all();
     return view('atores')->with('atores',$atores);
   }
+
+  public function buscaPorID($id){
+    $ator = Ator::find($id);
+    return view('ator')->with('ator',$ator);
+  }
 }

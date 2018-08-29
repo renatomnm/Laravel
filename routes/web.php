@@ -48,4 +48,5 @@ Route::get('/filmes','FilmesController@todososFilmes');
 Route::get('/filmes/db/{id}','FilmesController@buscarFilme');
 
 // Exercicio 3
-Route::get('/atores','AtorController@listaTudo'); 
+Route::get('/atores','AtorController@listaTudo');
+Route::get('/ator/{id}','AtorController@buscaPorID'); 
