@@ -41,4 +41,11 @@ class FilmesController extends Controller
       $filme = Filme::find($id);
       return view('dadosdofilme')->with('filme',$filme);
     }
+
+    public function adicionarFilme($filme){
+      //ainda não está conectado com o banco de dados
+      $filmes = ["Toy Story","Procurando Nemo","Avatar","Star Wars: Episódio V","Up","Mary e Max"];
+      $filmes[] = $filme;
+      return view('adicionarFilme')->with('filmes',$filmes);
+    }
 }

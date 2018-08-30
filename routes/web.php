@@ -46,7 +46,7 @@ Route::get('/filmes/{id}','FilmesController@procurarFilmeId');
 Route::get('/filmes/procurar/{nome}','FilmesController@procurarFilmeNome');
 Route::get('/filmes','FilmesController@todososFilmes');
 Route::get('/filmes/db/{id}','FilmesController@buscarFilme');
-
+Route::get('/filmes/adicionar/{filme}','FilmesController@adicionarFilme');
 // Exercicio 3
 Route::get('/atores','AtorController@listaTudo');
-Route::get('/ator/{id}','AtorController@buscaPorID'); 
+Route::get('/ator/{id}','AtorController@buscaPorID');

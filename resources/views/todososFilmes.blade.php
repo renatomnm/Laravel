@@ -1,6 +1,10 @@
-@forelse ($filmes as $filme)
-<li> {{$filme->title}} </li>
+@extends('layouts.modelo')
 
-@empty
-<h1>Não existem filmes para exibir</h1>
-@endforelse
+@section('content')
+  @forelse ($filmes as $filme)
+  <li> {{$filme->title}} </li>
+
+  @empty
+  <h1>Não existem filmes para exibir</h1>
+  @endforelse
+@endsection
