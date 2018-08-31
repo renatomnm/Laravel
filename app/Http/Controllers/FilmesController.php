@@ -54,5 +54,6 @@ class FilmesController extends Controller
       ]);
 
       $filme->save();
+      return redirect('/filmes')
     }
 }
