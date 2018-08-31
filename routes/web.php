@@ -51,3 +51,7 @@ Route::post('/filmes/adicionar','FilmesController@gravarFilme');
 // Exercicio 3
 Route::get('/atores','AtorController@listaTudo');
 Route::get('/ator/{id}','AtorController@buscaPorID');
+
+//Aula 4 - Adicionar Filme
+Route::get('/actor/adicionar','AtorController@addForm');
+Route::post('/actor/adicionar','AtorController@addDB');
