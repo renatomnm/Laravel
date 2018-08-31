@@ -47,6 +47,11 @@ class FilmesController extends Controller
     }
 
     public function gravarFilme(Request $request){
+      $request->validate([
+        'title' => 'required|unique:movies|max:240',
+        'rating' => 'required|numeric|between:1,10'
+      ]);
+
       $filme = Filme::create([
         'title'=> $request->input('title'),
         'rating'=>$request->input('rating'),
@@ -54,6 +59,6 @@ class FilmesController extends Controller
       ]);
 
       $filme->save();
-      return redirect('/filmes')
+      return redirect('/filmes');
     }
 }
