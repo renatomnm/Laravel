@@ -1,9 +1,20 @@
 @extends('layouts.modelo')
 
 @section('content')
-  <h1>O filme {{ end($filmes) }} foi adicionado ao arquivo</h1>
+<form action="/filmes/adicionar" method="POST">
+    @csrf
+    {{ method_field('POST') }}
 
-  @foreach ($filmes as $film)
-    <li>{{ $film }}</li>
-  @endforeach
+    <div>
+      <label>Nome do Filme</label>
+      <input type="text" name="title">
+    </div>
+
+    <div>
+      <label>Rating</label>
+      <input type="number" name="rating">
+    </div>
+
+    <button type="submit" value="adicioanar filme" name="adicionar filme">
+</form>
 @endsection

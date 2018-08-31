@@ -42,11 +42,12 @@ Route::get('/pagina3',function(){
   return redirect('/');
 });
 
-Route::get('/filmes/{id}','FilmesController@procurarFilmeId');
+//Route::get('/filmes/{id}','FilmesController@procurarFilmeId');
 Route::get('/filmes/procurar/{nome}','FilmesController@procurarFilmeNome');
 Route::get('/filmes','FilmesController@todososFilmes');
 Route::get('/filmes/db/{id}','FilmesController@buscarFilme');
-Route::get('/filmes/adicionar/{filme}','FilmesController@adicionarFilme');
+Route::get('/filmes/adicionar','FilmesController@adicionarFilme');
+Route::post('/filmes/adicionar','FilmesController@gravarFilme');
 // Exercicio 3
 Route::get('/atores','AtorController@listaTudo');
 Route::get('/ator/{id}','AtorController@buscaPorID');

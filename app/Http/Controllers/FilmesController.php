@@ -42,10 +42,17 @@ class FilmesController extends Controller
       return view('dadosdofilme')->with('filme',$filme);
     }
 
-    public function adicionarFilme($filme){
-      //ainda não está conectado com o banco de dados
-      $filmes = ["Toy Story","Procurando Nemo","Avatar","Star Wars: Episódio V","Up","Mary e Max"];
-      $filmes[] = $filme;
-      return view('adicionarFilme')->with('filmes',$filmes);
+    public function adicionarFilme(){
+      return view('adicionarFilme');
+    }
+
+    public function gravarFilme(Request $request){
+      $filme = Filme::create([
+        'title'=> $request->input('title'),
+        'rating'=>$request->input('rating'),
+        'release_date'=> '2018-08-30'
+      ]);
+
+      $filme->save();
     }
 }
