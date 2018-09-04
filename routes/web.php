@@ -59,3 +59,4 @@ Route::get('/actor/delete/{id}','AtorController@deleteForm');
 Route::delete('/actor/delete/{id}','AtorController@deleteActor');
 //generos
 Route::get('genero/show/{id}','GeneroController@show');
+Route::get('generos','GeneroController@showAll');

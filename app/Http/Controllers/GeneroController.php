@@ -11,4 +11,10 @@ class GeneroController extends Controller
     $genero = Genero::find($id);
     return view('genero')->with('genero',$genero);
   }
+
+  public function showAll(){
+    $generos = Genero::all();
+    return view('todososGeneros')->with('generos',$generos);
+  }
+
 }
