@@ -18,24 +18,24 @@
 
     <div>
       <label>Nome do Ator</label>
-      <input type="text" name="first_name" value={{$ator->first_name}} >
+      <input type="text" name="first_name" value={{$ator->first_name}} readonly="true">
     </div>
 
     <div>
       <label>Sobrenome do Ator</label>
-      <input type="text" name="last_name" value={{$ator->last_name}}>
+      <input type="text" name="last_name" value={{$ator->last_name}} readonly="true">
     </div>
 
     <div>
       <label>Avaliação</label>
-      <input type="number" name="rating" value={{$ator->rating}}>
+      <input type="number" name="rating" value={{$ator->rating}} readonly="true">
     </div>
 
     <div>
       <label>Id Filme Favorito</label>
-      <input type="number" name="favorite_movie_id" value={{$ator->favorite_movie_id}}>
+      <input type="number" name="favorite_movie_id" value={{$ator->favorite_movie_id}} readonly="true">
     </div>
 
-    <button type="submit">editar Ator</button>
+    <button type="submit">deletar Ator</button>
 </form>
 @endsection

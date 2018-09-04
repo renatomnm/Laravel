@@ -55,3 +55,5 @@ Route::get('/actor/adicionar','AtorController@addForm');
 Route::post('/actor/adicionar','AtorController@addDB');
 Route::get('/actor/edit/{id}','AtorController@editForm');
 Route::put('/actor/edit/{id}','AtorController@editActor');
+Route::get('/actor/delete/{id}','AtorController@deleteForm');
+Route::delete('/actor/delete/{id}','AtorController@deleteActor');

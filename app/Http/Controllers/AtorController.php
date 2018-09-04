@@ -63,4 +63,28 @@ class AtorController extends Controller
     $ator->save();
     return redirect('/atores');
   }
+
+  public function deleteForm($id){
+    $ator = Ator::find($id);
+    return view('deleteActor')->with('ator',$ator);
+  }
+
+  public function deleteActor(Request $request,$id){
+    $request->validate([
+      'first_name' => 'required',
+      'last_name' => 'required',
+      'rating' => 'required|numeric|between:1,10',
+      'favorite_movie_id' => 'required|numeric'
+    ]);
+
+    $ator = Ator::find($id);
+
+    $ator->first_name = $request->input('first_name');
+    $ator->last_name = $request->input('last_name');
+    $ator->rating = $request->input('rating');
+    $ator->favorite_movie_id = $request->input('favorite_movie_id');
+
+    $ator->delete();
+    return redirect('/atores');
+  }
 }
