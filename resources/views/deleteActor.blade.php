@@ -12,9 +12,9 @@
   </div>
 @endif
 
-<form action="/actor/edit/{{$ator->id}}" method="POST">
+<form action="/actor/delete/{{$ator->id}}" method="POST">
     @csrf
-    {{ method_field('PUT') }}
+    {{ method_field('DELETE') }}
 
     <div>
       <label>Nome do Ator</label>

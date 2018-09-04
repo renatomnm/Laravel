@@ -12,7 +12,7 @@
   </div>
 @endif
 
-<form action="/actor/adicionar/{{$id}}" method="POST">
+<form action="/actor/adicionar" method="POST">
     @csrf
     {{ method_field('POST') }}
 
