@@ -2,6 +2,6 @@
 
 @section('content')
   @foreach ($atores as $ator)
-  <a href="ator\{{ $ator->id }}"> <br>{{ $ator->getNomeCompleto() }}</a>
+  <a href="ator\buscar\{{ $ator->id }}"> <br>{{ $ator->getNomeCompleto() }}</a>
   @endforeach
 @endsection
