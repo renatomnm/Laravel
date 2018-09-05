@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Filme;
+use App\Genero;
 
 class FilmesController extends Controller
 {
@@ -43,19 +44,26 @@ class FilmesController extends Controller
     }
 
     public function adicionarFilme(){
-      return view('adicionarFilme');
+      $generos = Genero::all();
+      return view('adicionarFilme')->with('generos',$generos);
     }
 
     public function gravarFilme(Request $request){
       $request->validate([
         'title' => 'required|unique:movies|max:240',
-        'rating' => 'required|numeric|between:1,10'
+        'rating' => 'required|numeric|between:1,10',
+        'awards' => 'required|numeric',
+        'length' => 'required|numeric',
+        'release_date' => 'required'
       ]);
 
       $filme = Filme::create([
         'title'=> $request->input('title'),
         'rating'=>$request->input('rating'),
-        'release_date'=> '2018-08-30'
+        'awards' => $request->input('awards'),
+        'length' => $request->input('length'),
+        'release_date'=> $request->input('release_date'),
+        'genre_id' =>$request->input('genre_id')
       ]);
 
       $filme->save();

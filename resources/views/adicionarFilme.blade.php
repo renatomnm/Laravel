@@ -11,20 +11,45 @@
     </ul>
   </div>
 @endif
-<form action="/filmes/adicionar" method="POST">
-    @csrf
-    {{ method_field('POST') }}
+<html>
+    <head>
+        <title>Adicionar Filme</title>
+    </head>
+    <body>
+        <form action="/filmes/adicionar" method="POST">
+          @csrf
+          {{ method_field('POST') }}
+            <div>
+                <label for="titulo">Título</label>
+                <input type="text" name="title"/>
+            </div>
+            <div>
+                <label for="classificacao">Classificação</label>
+                <input type="text" name="rating"/>
+            </div>
+            <div>
+                <label for="premios">Prêmios</label>
+                <input type="text" name="awards"/>
+            </div>
+            <div>
+                <label for="duracao">Duração</label>
+                <input type="text" name="length"/>
+            </div>
+            <div>
+                <label for="estreia">Data de estreia</label>
+                <input type="text" name="release_date"/>
+            </div>
+            <div>
+                <label>Genero</label>
+                <select name="genre_id">
+                    @foreach($generos as $genero)
+                      <option value={{ $genero->id}}>{{ $genero->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <input type="submit" value="Adicionar Filme" name="submit"/>
+        </form>
+    </body>
+</html>
 
-    <div>
-      <label>Nome do Filme</label>
-      <input type="text" name="title">
-    </div>
-
-    <div>
-      <label>Rating</label>
-      <input type="number" name="rating">
-    </div>
-
-    <button type="submit">adicionar Filme</button>
-</form>
 @endsection
