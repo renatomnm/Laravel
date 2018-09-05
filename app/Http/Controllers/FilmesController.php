@@ -34,7 +34,7 @@ class FilmesController extends Controller
     }
 
     public function todososFilmes(){
-      $filmes = Filme::paginate(5);
+      $filmes = Filme::orderBy('title')->paginate(5);
       return view('todososFilmes')->with('filmes',$filmes);
     }
 
