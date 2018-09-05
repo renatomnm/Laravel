@@ -19,7 +19,7 @@
         @foreach($filme->atores as $ator)
           {{ $ator->first_name }} {{ $ator->last_name }}  -
         @endforeach
-      </li>
+      </li>a
 
       @empty
       <h1>Não existem filmes para exibir</h1>

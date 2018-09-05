@@ -8,7 +8,7 @@ use App\Ator;
 class AtorController extends Controller
 {
   public function listaTudo(){
-    $atores = Ator::all();
+    $atores = Ator::where('rating','>',5)->paginate(5);
     return view('atores')->with('atores',$atores);
   }
 
