@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddDirectorsIdMovies extends Migration
+class InsertForeignKey extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class AddDirectorsIdMovies extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::table('movies', function (Blueprint $table) {
-          $table->unsignedInteger('directors_id');
+          $table->foreign('directors_id')->references('id')->on('directors');
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -25,8 +27,10 @@ class AddDirectorsIdMovies extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::table('movies', function (Blueprint $table) {
-          $table->dropColumn('directors_id');
+          $table->dropForeign(['directors_id']);
         });
+        Schema::enableForeignKeyConstraints();
     }
 }
