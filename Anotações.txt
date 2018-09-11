@@ -5,7 +5,7 @@ Rotas -> routes->web.php
 
 Composer
 --- /// ---
-Composer create -project laravel/laravel
+Composer create-project laravel/laravel
 composer install
 php artisan serve
 
