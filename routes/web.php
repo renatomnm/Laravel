@@ -60,3 +60,7 @@ Route::delete('/actor/delete/{id}','AtorController@deleteActor');
 //generos
 Route::get('genero/show/{id}','GeneroController@show');
 Route::get('generos','GeneroController@showAll');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
