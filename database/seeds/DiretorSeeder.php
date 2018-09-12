@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Diretor;
+//use App\Diretor;
+use App\Filme;
 
 class DiretorSeeder extends Seeder
 {
@@ -13,5 +14,6 @@ class DiretorSeeder extends Seeder
     public function run()
     {
         //factory(App\Diretor::class)->times(10)->create();
+        factory(App\Filme::class)->times(50)->create();
     }
 }

@@ -2,12 +2,14 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Movies::class, function (Faker $faker) {
+$factory->define(App\Filme::class, function (Faker $faker) {
     return [
       'title' => $faker->word,
       'awards' => rand(0,20),
-      'release-date' => $faker->date,
+      'release_date' => $faker->date,
       'length' => rand(40,300),
       'genre_id' => rand(1,12),
+      'revenue' => 0,
+      'directors_id' => rand(1,10)
     ];
 });

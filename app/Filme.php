@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Filme extends Model
 {
   protected $table = 'movies';
-  protected $fillable = ['title','rating','release_date','awards','length','genre_id'];
+  protected $fillable = ['title','rating','release_date','awards','length','genre_id','directors_id'];
 
   public function genero(){
     return $this->hasOne(Genero::class,'id','genre_id');
