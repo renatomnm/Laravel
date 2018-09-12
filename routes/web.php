@@ -52,7 +52,7 @@ Route::post('/filmes/adicionar','FilmesController@gravarFilme');
 Route::get('/atores','AtorController@listaTudo');
 
 Route::group(['middleware' => 'auth'], function(){
-  Route::get('/ator/buscar/{id}','AtorController@buscaPorID');
+  Route::get('/actor/buscar/{id}','AtorController@buscaPorID');
   Route::get('/actor/adicionar','AtorController@addForm');
   Route::post('/actor/adicionar','AtorController@addDB');
   Route::get('/actor/edit/{id}','AtorController@editForm');
