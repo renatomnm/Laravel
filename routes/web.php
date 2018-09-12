@@ -50,13 +50,18 @@ Route::get('/filmes/adicionar','FilmesController@adicionarFilme')->middleware('a
 Route::post('/filmes/adicionar','FilmesController@gravarFilme');
 // Exercicio 3
 Route::get('/atores','AtorController@listaTudo');
-Route::get('/ator/buscar/{id}','AtorController@buscaPorID');
-Route::get('/actor/adicionar','AtorController@addForm');
-Route::post('/actor/adicionar','AtorController@addDB');
-Route::get('/actor/edit/{id}','AtorController@editForm');
-Route::put('/actor/edit/{id}','AtorController@editActor');
-Route::get('/actor/delete/{id}','AtorController@deleteForm');
-Route::delete('/actor/delete/{id}','AtorController@deleteActor');
+
+Route::group(['middleware' => 'auth'], function(){
+  Route::get('/ator/buscar/{id}','AtorController@buscaPorID');
+  Route::get('/actor/adicionar','AtorController@addForm');
+  Route::post('/actor/adicionar','AtorController@addDB');
+  Route::get('/actor/edit/{id}','AtorController@editForm');
+  Route::put('/actor/edit/{id}','AtorController@editActor');
+  Route::get('/actor/delete/{id}','AtorController@deleteForm');
+  Route::delete('/actor/delete/{id}','AtorController@deleteActor');
+});
+
+
 //generos
 Route::get('genero/show/{id}','GeneroController@show');
 Route::get('generos','GeneroController@showAll');
