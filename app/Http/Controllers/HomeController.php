@@ -28,6 +28,32 @@ class HomeController extends Controller
 
     public function dashboard_welcome()
     {
-        return view('dashboard');
+        $user = auth()->user();
+        return view('dashboard')->with('user',$user);
+    }
+
+    public function editUserForm()
+    {
+        $user = auth()->user();
+        return view('editUser')->with('user',$user);
+    }
+
+    public function editUser(Request $request)
+    {
+        $user = auth()->user();
+
+
+        $request->validate([
+          'name' => 'required',
+          'email' => 'required',
+          'phone' => 'required|numeric'
+        ]);
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->phone = $request->input('phone');
+
+        $user->save();
+        return redirect('/dashboard');
     }
 }
