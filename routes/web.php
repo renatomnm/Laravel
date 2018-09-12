@@ -46,7 +46,7 @@ Route::get('/pagina3',function(){
 Route::get('/filmes/procurar/{nome}','FilmesController@procurarFilmeNome');
 Route::get('/filmes','FilmesController@todososFilmes');
 Route::get('/filmes/db/{id}','FilmesController@buscarFilme');
-Route::get('/filmes/adicionar','FilmesController@adicionarFilme');
+Route::get('/filmes/adicionar','FilmesController@adicionarFilme')->middleware('auth');
 Route::post('/filmes/adicionar','FilmesController@gravarFilme');
 // Exercicio 3
 Route::get('/atores','AtorController@listaTudo');
