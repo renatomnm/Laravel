@@ -9,7 +9,6 @@ $factory->define(App\Filme::class, function (Faker $faker) {
       'release_date' => $faker->date,
       'length' => rand(40,300),
       'genre_id' => rand(1,12),
-      'revenue' => 0,
-      'directors_id' => rand(1,10)
+      'revenue' => 0
     ];
 });
