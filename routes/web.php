@@ -55,6 +55,8 @@ Route::group(['middleware' => 'auth'], function(){
   Route::get('/actor/buscar/{id}','AtorController@buscaPorID');
   Route::get('/actor/adicionar','AtorController@addForm');
   Route::post('/actor/adicionar','AtorController@addDB');
+  Route::post('/actor/adicionarApi','AtorController@addDBApi');
+
   Route::get('/actor/edit/{id}','AtorController@editForm');
   Route::put('/actor/edit/{id}','AtorController@editActor');
   Route::get('/actor/delete/{id}','AtorController@deleteForm');

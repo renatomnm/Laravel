@@ -40,6 +40,24 @@ class AtorController extends Controller
     return redirect('/atores');
   }
 
+  public function addDBApi(Request $request){
+     $request->validate([
+       'first_name' => 'required',
+       'last_name' => 'required',
+       'rating' => 'required|numeric|between:1,10',
+       'favorite_movie_id' => 'required|numeric'
+     ]);
+
+    $ator = Ator::create([
+      'first_name'=> $request->input('first_name'),
+      'last_name'=>$request->input('last_name'),
+      'rating'=> $request->input('rating'),
+      'favorite_movie_id' => $request->input('favorite_movie_id')
+    ]);
+
+    return response()->json($ator,200);
+  }
+
   public function editForm($id){
     $ator = Ator::find($id);
     return view('editActor')->with('ator',$ator);
